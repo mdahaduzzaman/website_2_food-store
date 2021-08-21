@@ -1,0 +1,716 @@
+@font-face {
+    font-family: "Raleway-Black";
+    src: url('../fonts/Raleway-Black.ttf');
+}
+@font-face {
+    font-family: "Raleway-Bold";
+    src: url('../fonts/Raleway-Bold.ttf');
+}
+@font-face {
+    font-family: "Raleway-ExtraBold";
+    src: url('../fonts/Raleway-ExtraBold.ttf');
+}
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+    font-family: "Raleway-Medium";
+    src: url('../fonts/Raleway-Medium.ttf');
+}
+@font-face {
+    font-family: "Raleway-SemiBold";
+    src: url('../fonts/Raleway-SemiBold.ttf');
+}
+/* Reset layout */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Raleway-Regular;
+    height: 5000px;
+}
+/* Reuseable-class */
+.container{
+    max-width: 1050px;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-evenly{
+    justify-content: space-evenly;
+}
+.align-center{
+    align-items: center;
+}
+.magic-shadow{
+    position: relative;
+    background-color: white;
+}
+.magic-shadow::after{
+    content: " ";
+    display: block;
+    background-image: url('../icons/shadow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    bottom: -22px;
+    z-index: -1;
+}
+.magic-shadow-sm{
+    background-color: white;
+    position: relative;
+}
+.magic-shadow-sm::after{
+    content: "";
+    display: block;
+    background-image: url("../icons/shadow-sm.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+    width: 100%;
+    bottom: -22px;
+    position: absolute;
+    z-index: -1;
+}
+.btn-primary{
+    background-color: orange;
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+}
+.btn-primary:hover{
+    background-color: white;
+    color: orange;
+    border: 1px solid orange;
+}
+.btn-secondary{
+    background-color: black;
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+}
+.btn-primary:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.section-heading{
+    font-family: Raleway-Bold;
+    text-align: center;
+    position: relative;
+    margin-bottom: 6rem;
+}
+.section-heading::after{
+    content: "";
+    display: block;
+    background-image: url('../icons/hr.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: -40px;
+}
+/* Header topbar */
+header.topbar{
+    background-color: rgb(11, 11, 26);
+    color: white;
+    padding: .5rem 0;
+}
+.topbar .container .social-icons a{
+    margin-right: .35rem;
+    cursor: pointer;
+}
+.topbar .container .social-icons a:hover{
+    /* color: rgb(11, 11, 26); */
+    filter: invert(60%);
+}
+.topbar .divider{
+    margin: 0 .75rem;
+}
+.topbar .container .auth > div a{
+    text-decoration: none;
+    color: white;
+}
+
+.topbar .container .auth > div img{
+    margin-right: .5rem;
+}
+/* nav  */
+/* top  */
+nav .top .container .callus img, nav .top .container .workinghour img{
+    margin-right: .75rem;
+}
+.top .container{
+    padding: 1.5rem 0;
+}
+nav .top .container .callus > div h5, nav .top .container .workinghour > div h5{
+    padding-bottom: .5rem;
+    font-family: Raleway-Black;
+}
+nav .top .container .callus > div h6, nav .top .container .workinghour > div h6{
+    font-family: Raleway-Regular;
+    letter-spacing: .1rem;
+
+    font-size: 10px;
+}
+/* menubar */
+nav .menubar .container a{
+    text-decoration: none;
+    color: rgb(11, 11, 26);
+    padding: .5rem 1rem;
+    font-family: Raleway-SemiBold;
+    transition: all .3sec ease;
+}
+nav .menubar .container a:hover{
+    background-color: orange;
+    color: white;
+}
+
+nav .menubar .container a:first-child{
+    background-color: orange;
+    color: white;
+}
+/* section hero */
+section.hero{
+    background-image: url('../images/hero.png');
+    height: 400px;
+    background-position: 0% 0%;
+    background-size: cover;
+    overflow: hidden;   
+}
+section.hero .container{
+    position: relative;
+}
+section.hero .container > a > img{
+    display: none;
+}
+section.hero .container .welcome img{
+    margin-left: .75rem;
+}
+section.hero .container h1{
+    font-family: Raleway-ExtraBold;
+    font-size: 2.2rem;
+    margin-bottom: .75rem;
+}
+section.hero .container p{
+    width: 50%;
+    font-family: Raleway-SemiBold;
+    line-height: 1.3rem;
+}
+section.hero .container .button{
+    margin-top: 1.5rem;
+}
+section.hero .container .button a{
+    text-decoration: none;
+}
+section.hero .container .button a:first-child{
+    margin-right: .35rem;
+}
+section.hero .container .sideimg{
+    position: absolute;
+    right: 0px;
+    bottom: -20px;
+    width: 300px;
+}
+/* Top - Products */
+section.top-products{
+    background-color: rgba(128, 128, 128, 0.219);
+    padding: 3rem 0;
+}
+section.top-products .food-slider .food-card{
+    padding: 1.5rem 0;
+}
+section.top-products .container .food-slider .food-card{
+    background-color: white;
+    border-radius: 4px;
+    width: 28%;
+}
+section.top-products .container .food-slider .food-card .product-img img{
+    height: 200px;
+    width: 80%;
+    object-fit: contain;
+    padding-bottom: 1.5rem;
+}
+hr{
+    border: 1px solid grey;
+    opacity: .2;
+}
+section.top-products .container .food-slider .food-card h2{
+    font-family: Raleway-Medium;
+    text-align: center;
+    margin-top: 1rem;
+}
+section.top-products .container .food-slider .food-card .stars img{
+    margin-right: .25rem;
+}
+section.top-products .container .food-slider .food-card .price{
+    color: red;
+    text-align: center;
+    margin-top: .5rem;
+}
+section.top-products .container .food-slider .food-card .button button{
+    font-family: Raleway-Bold;
+    color: rgb(11, 11, 26);
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+section.top-products .container .food-slider .food-card .button button:hover{
+    background-color: orange;
+    color: white;
+}
+section.top-products .container .food-slider .food-card .button{
+    margin-top: 1rem;
+}
+section.top-products .container .food-slider .food-card .button img{
+    background-color: orange;
+    padding: .5rem;
+    height: 32px;
+    margin-right: 1rem;
+}
+section.top-products .readm-btn{
+    margin-top: 1.5rem;
+}
+/* section fresh meal  */
+section.freshmeal{
+    padding: 2.5rem 0;
+}
+section.freshmeal .container{
+    margin-top: 6rem;
+}
+section.freshmeal .container .leftside, section.freshmeal .container .rightside{
+    flex: 1;
+}
+section.freshmeal .container .leftside img{
+    width: 85%;
+}
+section.freshmeal .container .rightside h2{
+    font-family: Raleway-bold;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+section.freshmeal .container .rightside p{
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+
+/* Section services */
+section.services{
+    background-color: rgba(128, 128, 128, 0.219);
+    padding: 3rem 0;
+}
+section.services .container .item{
+    background-color: white;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    border-radius: 4px;
+    margin-right: 2rem;
+}
+section.services .container .card-wrapper{
+    margin-right: -2rem;
+    margin-top: 8rem;
+}
+section.blog .container .wrapper .item img {
+    width: 100%;
+}
+section.services .container .item h2{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-family: Raleway-Bold;
+    font-size: 1.3rem;
+}
+section.services .container .item h2.yellow{
+    color: orange;
+}
+section.services .container .item p{
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+/* Big Deal section  */
+section.big-deal{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.945),
+        rgba(0, 0, 0, 0.664)
+    ),url('../images/food-table.jpg');
+    background-attachment: fixed;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0;
+}
+section.big-deal .container .wrapper{
+    margin-right: -1rem;
+}
+section.big-deal .container .wrapper .item{
+    background-color: orange;
+    color: white;
+    height: 100px;
+    text-align: center;
+    margin-right: 1rem;
+    height: 150px;
+    width: 150px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.big-deal .container .wrapper .item span:first-child{
+    font-size: 2.5rem;
+    font-family: Raleway-SemiBold;
+    margin-bottom: .25rem;
+}
+section.big-deal .container .wrapper .item span:last-child{
+    font-family: Raleway-Medium;
+}
+section.big-deal .container .pure{
+    color: white;
+}
+/* blog section  */
+section.blog{
+    background-color: rgba(128, 128, 128, 0.219);
+    padding: 3rem 0;
+
+}
+section.blog .container .wrapper{
+    margin-right: -2rem;
+}
+section.blog .container .wrapper .item{
+    margin-right: 2rem;
+    background-color: white;
+    border-radius: 4px;
+}
+section.blog .container .wrapper .item .content{
+    padding: 2rem 1.5rem;
+}
+section.blog .container .wrapper .item .content span:first-child{
+    margin-right: 4.5rem;
+}
+section.blog .container .wrapper .item .content span:last-child{
+    margin-left: 1.3rem;
+}
+section.blog .container .wrapper .item .content h2{
+    font-family: Raleway-Bold;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+section.blog .container .wrapper .item .content p{
+    font-family: Raleway-Medium;
+
+}
+section.blog .container .wrapper .item img{
+    width: 100%
+}
+section.blog .container > div button{
+    margin-top: 3rem;
+}
+/* subscribe section */
+section.subscribe{
+    background-color: orange;
+    padding: 3rem 0;
+}
+section.subscribe .container .wrapper .item{
+    flex: 1;
+}
+section.subscribe .container .wrapper .item img{
+    width: 100%;
+}
+section.subscribe .container .wrapper .item h2{
+    font-family: Raleway-Bold;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+section.subscribe .container .wrapper .item p{
+    font-family: Raleway-Medium;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+section.subscribe .container .wrapper .item .input{
+    background-color: white;
+    display: flex;
+    padding: .3rem;
+    border-radius: 4px;
+}
+section.subscribe .container .wrapper .item .input input{
+    width: 100%;
+    border: none;
+    padding: .3rem 1rem;
+}
+section.subscribe .container .wrapper .item .input input:focus{
+    outline: none;
+}
+section.subscribe .container .wrapper .item .input button.btn-primary{
+    border: 1px solid transparent;
+    outline: none;
+}
+/* section contact */
+section.contact .contactus .item{
+    flex: 1;
+}
+section.contact .contactus .item > div > div > div img{
+    margin-right: 1rem;
+}
+section.contact .contactus .item > div > div > div{
+    margin-bottom: 2rem;
+}
+section.contact .contactus .item > div > div > div > div span:first-child{
+    font-family: Raleway-Bold;
+    line-height: 1.7;
+}
+section.contact .contactus .item > div > div > div > div span:last-child{
+    font-size: 1.2rem;
+}
+section.contact .contactus .item:last-child iframe{
+    filter: grayscale(100%);
+    width: 100%;
+    
+}
+footer{
+    background-color: rgba(11, 11, 26, 0.897);
+}
+footer .container{
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+footer .container .wrapper{
+    margin-right: -2rem;
+}
+footer .container .wrapper > div{
+    flex: 1;
+    margin-right: 2rem;
+}
+footer .container .wrapper > div h3{
+    font-family: Raleway-SemiBold;
+    margin-bottom: 1rem;
+}
+footer .container .wrapper > div hr{
+    border: 1px solid orange;
+    margin-bottom: .8rem;
+}
+footer .container .wrapper > .about p{
+    font-family: Raleway-Regular;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+footer .container .wrapper > .about button{
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.349);
+}
+footer .container .wrapper > .about button:hover{
+    color: gray;
+}
+footer .container .wrapper div ul{
+    list-style-type: none;
+}
+footer .container .wrapper div ul li{
+    margin-bottom: .5rem;
+}
+footer .container .wrapper .quicklinks ul li a{
+    text-decoration: none;
+    color: white;
+    transition: all .2s ease;
+}
+footer .container .wrapper .quicklinks ul li a:hover{
+    color: orange;
+}
+footer .container .wrapper .followus ul{
+    text-align: left;
+    margin-left: 4.5rem;
+}
+footer .container .wrapper .followus ul li a{
+    text-decoration: none;
+    color: white;
+}
+footer .container .wrapper .followus ul li a > img{
+    margin-right: .75rem;
+}
+footer .container .wrapper > .gallery .images{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .container .wrapper > .gallery img{
+    width: 31%;
+    height: 30%;
+    margin-bottom: .5rem;
+}
+.copyright{
+    background-color: rgb(28, 26, 32);
+    color: white;
+    padding: .5rem 0;
+    text-align: center;
+    font-size: .8rem;
+    font-family: Raleway-Regular;
+}
+.copyright span{
+    color: orange;
+    font-family: Raleway-SemiBold;
+}
+/* Responsive For Iphone-x */
+@media screen and (max-width: 500px){
+    section.hero .container{
+        padding: 1rem;
+    }
+    .topbar, nav{
+        display: none;
+    }
+    section.hero{
+        height: 500px;
+        align-items: flex-start;
+    }
+    section.hero .container > a > img {
+        display: block;
+        width: 3rem;
+        position: sticky;
+    }
+    section.hero .container .sideimg {
+        position: absolute;
+        bottom: -107px;
+        right: -150px;
+    }
+    section.top-products {
+        padding: 2rem 0;
+    }
+    section.top-products .container .food-slider .food-card {
+        width: 100%;
+    }
+    .food-slider{
+        display: block;
+    }
+
+    section.freshmeal .container{
+        padding: 0 1rem;
+        display: block;
+    }
+
+    section.services .container{
+        padding: 0 1rem;
+    }
+    section.services .container .card-wrapper{
+        display: block;
+    }
+    section.services .container .card-wrapper .item{
+        width: 92%;
+        margin-bottom: 6rem;
+    }
+    section.big-deal .container{
+        padding: 0 1rem;
+    }
+    section.big-deal .container .wrapper {
+        margin-right: -.5rem;
+    }
+    section.big-deal .container .wrapper .item{
+        margin-right: .5rem;
+    }
+    section.big-deal .container .wrapper .item span:first-child {
+        font-size: 30px;
+    }
+    section.big-deal .container .wrapper .item span:last-child {
+        font-family: Raleway-Medium;
+        font-size: 12px;
+    }
+    /* seciton blog  */
+    section.blog {
+        background-color: rgb(128 128 128 / 54%);
+    }
+    section.blog .container{
+        /* padding: 0 1rem; */
+        width: 100vw;
+    }
+    section.blog .container .wrapper{
+        /* display: block; */
+        flex-direction: column;
+    }
+    section.blog .container .wrapper .item{
+        width: 83%;
+        margin-bottom: 3rem;
+    }
+    section.blog .container .wrapper .item .content {
+        padding: 2rem 1rem;
+    }
+    section.blog .container .wrapper .item .content span:first-child {
+        margin-right: 12.5rem;
+        line-height: 2;
+    }
+    section.blog .container .wrapper .item .content span:last-child {
+        margin-left: 33px;
+    }
+    section.blog .container .wrapper .item .content h2 {
+        font-size: 18px;
+    }
+    section.blog .container > div button {
+        margin-top: 0rem;
+    }
+    section.subscribe .container .wrapper{
+        flex-direction: column;
+    }
+    section.subscribe .container .wrapper .item:last-child{
+        padding: 0 1rem;
+    }
+    section.contact .wrapper{
+        flex-direction: column;
+    }
+    section.contact .wrapper .item h1{
+        padding-top: 3rem;
+    }
+    section.contact .contactus .item:last-child{
+        width: 100%;
+    }
+    section.contact .contactus .item:last-child iframe {
+        height: 200px;
+    }
+    footer .container{
+        padding: 0 1rem;
+    }
+    footer .container .wrapper{
+        flex-direction: column;
+        text-align: left;
+    }
+    footer .container .wrapper > div {
+        flex: 1;
+        margin-right: 2rem;
+        margin-bottom: 3rem;
+    }
+    footer .container .wrapper .followus ul {
+        margin-left: 0;
+    }
+    footer .container .wrapper > .gallery img{
+        width: 48.7%;
+    }
+    body{
+        height: 5700px;
+    }
+}
